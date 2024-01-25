@@ -1,0 +1,81 @@
+<div class="container">
+    <h5 style="color: #006191; padding: 20px;">Nuevo contacto</h5>
+    <form>
+        <div class="container"
+        style=" padding: 10px; background-color: #F6F6F6; border-radius: 20px; text-align: center; height: 480px; width: 310px;">
+
+        <div class="col-md-4">
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+            <input type="text" placeholder="Nombres"
+                style=" width: 270px; height: 45px;border-radius: 20px; border: none;"  [(ngModel)]="contacto.nombres" name="nombres">
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+            <input type="text" placeholder="Apellidos"
+                style="width: 270px; height: 45px;border-radius: 20px; border: none;" [(ngModel)]="contacto.apellidos" name="apellidos" >
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+
+            <input type="email"  placeholder="E-mail"
+                style="width: 270px; height: 45px;border-radius: 20px; border: none;" [(ngModel)]="contacto.email" name="email">
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+
+            <input type="number"  placeholder="Cel/Tel"
+                style=" width: 270px; height: 45px;border-radius: 20px; border: none;" [(ngModel)]="contacto.celular " name="celular">
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+            <input type="date" placeholder="Fecha de nacimiento" 
+                style="width: 270px; height: 45px;border-radius: 20px; border: none;" [(ngModel)]="contacto.fechaDeNacimiento" name="nacimiento">
+            <h1> </h1>
+            <h1></h1>
+            <h1></h1>
+            <input type="text" placeholder="Direccion" 
+                style="width: 270px; height: 45px;border-radius: 20px; border: none;" [(ngModel)]="contacto.direccion" name = "direccion">
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+            <select style="width: 270px; height: 45px;border-radius: 20px; border: none;" [(ngModel)]="contacto.tipoDeContacto" name="tipoContacto">
+                <option [value]="contacto" *ngFor="let contacto of tiposdecontactos">{{contacto}}</option>
+                
+            </select>
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+
+            <select style="width: 270px; height: 45px;border-radius: 20px; border: none;" [(ngModel)]="contacto.origen" name="origen">
+                <option [value]="ciudades" *ngFor="let ciudades of listaciudades">{{ciudades}}</option>
+                </select>
+        </div>
+    </div>
+
+        <div style="top: 45px;">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div>
+                    <button class="boton-cancelar"
+                   [routerLink]="['/contactos']">Cancelar</button>
+    
+                </div>
+                <div>
+                    <button class="boton-agregar"
+                   (click)='create()' [routerLink]="['/contactos']">Agregar</button>
+    
+    
+                </div>
+            
+        </div>
+            
+
+        </div>
+
+    
+
+
+
+    </form>
+</div>

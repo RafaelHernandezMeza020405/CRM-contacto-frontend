@@ -1,0 +1,19 @@
+.boton-cancelar {
+    position: relative;
+    top: 40px;
+    border-radius: 100px;
+    height: 40px;
+    width: 150px;
+    margin-left: 16px;
+    background-color: darkgray;
+}
+
+.boton-agregar {
+    border-radius: 100px;
+    height: 40px;
+    width: 150px;
+    background-color: #64CD98;
+    margin-left: 166px;
+    position: relative;
+    top: -9px;
+}
