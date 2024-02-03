@@ -31,4 +31,14 @@ contactos:Contacto[];
 
   }
 
+  delete(contacto:Contacto):void{
+    console.log("Metodo de borrar");
+    this.contactoService.delete(contacto.nombres).subscribe(
+      res => this.contactoService.getAll().subscribe(
+        response=>this.contactos=response
+      )
+    );
+  
+  }
+
 }

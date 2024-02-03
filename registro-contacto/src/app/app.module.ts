@@ -12,6 +12,7 @@ const routes:Routes=[
   {path:'', redirectTo:'/contactos', pathMatch:'full'},
   {path:'contactos', component:ContactoComponent},
   {path:'contactos/form', component:FormulariocontactoComponent},
+
 ]
 @NgModule({
   declarations: [

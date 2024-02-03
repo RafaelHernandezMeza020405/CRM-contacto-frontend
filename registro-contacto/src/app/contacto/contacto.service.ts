@@ -22,6 +22,8 @@ export class ContactoService {
     return this.http.get<Contacto>(this.url + "/" + contacto.nombres);
   }
 
-  
+  delete(nombre:string):Observable<Contacto>{
+    return this.http.delete<Contacto>(this.url+ "/" + nombre); 
+   }
 
 }
