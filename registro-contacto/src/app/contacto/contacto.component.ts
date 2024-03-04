@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contacto } from './contacto';
-import { ContactoService } from './contacto.service';
+import { ContactoService } from '../servicio/contacto.service'; 
 
 @Component({
   selector: 'app-contacto',
@@ -9,11 +9,20 @@ import { ContactoService } from './contacto.service';
 })
 export class ContactoComponent implements OnInit {
 titulo:string ="Lista de contactos";
-contacto:Contacto = new Contacto();
+contacto:Contacto = {
+  nombres: '',
+  apellidos: '',
+  email: '',
+  celular: '',
+  fechaDeNacimiento: '',
+  direccion: '',
+  tipoDeContacto: '',
+  origen: '',
+};
 
-contactos:Contacto[];
+contactos:Contacto[] = [];
 
-  constructor(private contactoService:ContactoService){}
+  constructor(private contactoService:ContactoService){this.obtenerContacto}
 
   ngOnInit(): void{
     this.contactoService.getAll().subscribe(
@@ -25,7 +34,7 @@ contactos:Contacto[];
   }
 
   obtenerContacto():void{
-    this.contactoService.get(this.contacto).subscribe(
+    this.contactoService.get(this.contacto.nombres).subscribe(
       c=> this.contacto=c
     );
 
@@ -33,12 +42,14 @@ contactos:Contacto[];
 
   delete(contacto:Contacto):void{
     console.log("Metodo de borrar");
-    this.contactoService.delete(contacto.nombres).subscribe(
+    this.contactoService.delete(contacto).subscribe(
       res => this.contactoService.getAll().subscribe(
         response=>this.contactos=response
       )
     );
   
   }
+
+
 
 }

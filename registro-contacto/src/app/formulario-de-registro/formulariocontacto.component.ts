@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactoService } from './contacto.service';
-import { Contacto } from './contacto';
+import { ContactoService } from '../servicio/contacto.service'; 
+import { Contacto } from '../contacto/contacto';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-formulariocontacto',

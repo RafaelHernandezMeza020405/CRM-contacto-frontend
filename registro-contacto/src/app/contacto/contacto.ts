@@ -7,5 +7,8 @@ export class Contacto {
     direccion:string;
     tipoDeContacto:string;
     origen:string;
+
+   
+   
     
 }
