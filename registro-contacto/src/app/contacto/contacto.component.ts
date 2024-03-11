@@ -34,7 +34,7 @@ contactos:Contacto[] = [];
   }
 
   obtenerContacto():void{
-    this.contactoService.get(this.contacto.nombres).subscribe(
+    this.contactoService.get(this.contacto.email).subscribe(
       c=> this.contacto=c
     );
 

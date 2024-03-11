@@ -13,7 +13,7 @@ const routes:Routes=[
   {path:'', redirectTo:'/contactos', pathMatch:'full'},
   {path:'contactos', component:ContactoComponent},
   {path:'contactos/form', component:FormulariocontactoComponent},
-  {path:'contactos/formulariodeactualizacion/:nombres', component:FormulariodeactualizacionComponent}
+  {path:'contactos/formulariodeactualizacion/:email', component:FormulariodeactualizacionComponent}
 
 ]
 @NgModule({

@@ -19,17 +19,16 @@ export class ContactoService {
     return this.http.post<Contacto>(this.url, contacto);
   }
 
-  get(nombres:string):Observable<Contacto>{
-    return this.http.get<Contacto>(this.url + "/" + nombres);
+  get(email:string):Observable<Contacto>{
+    return this.http.get<Contacto>(this.url + "/" + email);
   }
 
   delete(contacto:Contacto):Observable<Contacto>{
-    return this.http.delete<Contacto>(this.url+ "/" + contacto.nombres); 
+    return this.http.delete<Contacto>(this.url+ "/" + contacto.email); 
    }
-
-  update(nombres:string,contacto:Contacto):Observable<Contacto>{
-    return this.http.put<Contacto>(`${this.url}/${nombres}`, contacto);
-      
+   
+  update(email:string,contacto:Contacto):Observable<Contacto>{
+    return this.http.put<Contacto>(`${this.url}/${email}`, contacto);
   } 
   
 }

@@ -21,9 +21,9 @@ export class FormulariodeactualizacionComponent implements OnInit {
   cargar(): void {
     this.activatedRouter.params.subscribe(
       e => {
-        let nombres = e['nombres'];
-        if (nombres) {
-          this.contactoService.get(nombres).subscribe(
+        let email = e['email'];
+        if (email) {
+          this.contactoService.get(email).subscribe(
             es => {
               this.contacto = es;
             }
@@ -37,7 +37,7 @@ export class FormulariodeactualizacionComponent implements OnInit {
 
 
   updateC(): void {
-    this.contactoService.update(this.contacto.nombres,this.contacto).subscribe(
+    this.contactoService.update(this.contacto.email,this.contacto).subscribe(
       res=>{
         console.log(res);
         this.router.navigate(['/contactos']);
